@@ -294,6 +294,8 @@ DEPENDENCIES
   rails (~> 6.0.0)
   rspec-json_matcher
   rspec-rails
+  rubocop
+  rubocop-rspec
   sass-rails (~> 5)
   selenium-webdriver
   slim
