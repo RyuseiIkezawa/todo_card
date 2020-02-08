@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
 class CardsController < ApplicationController
-  def top
-    cards = Card.all
+
+  def top; end
+
+  def all
+    cards = Card.includes(:todo).all
     render json: cards, each_serializer: CardSerializer, include: '**'
   end
 

@@ -15,52 +15,11 @@ section.form-section
       = form.text_field :description, class: 'input-form'
     = form.submit '作成', class: 'form-btn'
 
+section.acards-section#get-cards
+  cards
 
 / cards
-- @cards.each do |card|
-  section.cards-section
-    div.cards
-      p.title
-        = card.todo.title
-      p.description
-        = card.todo.description
+//javascript:
 
-javascript:
 
-sass:
-  section.form-section
-    width: 30%
-    display: block
-
-  .text-form-block
-    display: block
-    font-size: 16px
-    margin: 20px 0
-    width: 320px
-
-  .input-form
-    border-right: none
-    border-left: none
-    border-top: none
-    font-size: 16px
-    width: 100%
-
-  .form-btn
-    background-color: #2E2F30
-    color: #fff
-    font: 16px italic
-    padding: 5px 0
-    width: 120px
-
-  section.cards-section
-    display: inline-block
-    margin 0 auto
-    width: 90%
-
-  .cards
-    padding: 20px
-    margin: 10px
-    width: 40px
-
-  p.title
-  p.description
+= javascript_pack_tag 'cards'
