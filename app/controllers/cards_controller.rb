@@ -1,7 +1,9 @@
-class CardsController < ApplicationController
+# frozen_string_literal: true
 
+class CardsController < ApplicationController
   def top
-    @cards = Card.all
+    cards = Card.all
+    render json: cards, each_serializer: CardSerializer, include: '**'
   end
 
   def create_or_update
@@ -16,12 +18,12 @@ class CardsController < ApplicationController
 
   def destroy
     card = Card.find(params[:id])
-    card.delete
+    card.delete!
   end
 
   private
 
-    def card_params
-      params[:card].permit(:title, :description, :id)
-    end
+  def card_params
+    params[:card].permit(:title, :description, :id)
+  end
 end
