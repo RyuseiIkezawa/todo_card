@@ -5,21 +5,25 @@ h1
   | TODO
 
 / form
-section.form-section
-  = form_with url: create_or_update_cards_path, scope: :card do |form|
+section.form-section#post-todo
+  form
     div.text-form-block
-      = form.label 'タイトル'
-      = form.text_field  :title, class: 'input-form'
+      label
+          | 日付
+      input type='date' name='todo[deadline]' v-model='deadline' class='input-form date-form'
     div.text-form-block
-      = form.label '詳細'
-      = form.text_field :description, class: 'input-form'
-    = form.submit '作成', class: 'form-btn'
+      label
+          | タイトル
+      input type='textarea' name='todo[title]' v-model='title' class='input-form'
+    div.text-form-block
+      label
+          | 詳細
+      input type='textarea' name='todo[description]' v-model='description' class='input-form'
+    div.text-form-block
+      input type='submit' name='action' value='作成' class='form-btn' @click='postTodo'
 
-section.acards-section#get-cards
+section.cards-section#get-cards
   cards
 
-/ cards
-//javascript:
-
-
 = javascript_pack_tag 'cards'
+= javascript_pack_tag 'post_todo'

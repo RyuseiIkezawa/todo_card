@@ -2,11 +2,15 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
+import Vue from 'vue/dist/vue.esm.js'
+import axios from 'axios';
 
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+
+Vue.config.devtools = true;
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference

@@ -17,6 +17,7 @@ class CardsController < ApplicationController
     else
       card.todo.update!(card_params)
     end
+    render :top, status: :created
   end
 
   def destroy
@@ -27,6 +28,6 @@ class CardsController < ApplicationController
   private
 
   def card_params
-    params[:card].permit(:title, :description, :id)
+    params[:card].permit(:title, :description, :deadline, :id)
   end
 end

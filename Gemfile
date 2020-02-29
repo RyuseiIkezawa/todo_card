@@ -63,6 +63,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-rails'
+  gem 'rack-cors', :require => 'rack/cors'
   gem 'rspec-json_matcher'
   gem 'rspec-rails'
   gem 'spring-commands-rspec'

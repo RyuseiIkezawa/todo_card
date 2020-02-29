@@ -3,42 +3,82 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 section.form-section {
-  width: 30%;
   display: block;
+  margin-left: auto;
+  right: 100px;
+  width: 30%;
 
   .text-form-block {
     display: block;
     font-size: 16px;
-    margin: 20px 0;
+    margin: 20px;
     width: 320px;
 
     .input-form {
       border-right: none;
       border-left: none;
       border-top: none;
+      box-sizing: border-box;
       font-size: 16px;
+      margin: 10px 0;
       width: 100%;
     }
 
+    .date-form {
+      background-color: #fff;
+    }
+
     .form-btn {
-      background-color: #2E2F30;
+      background-color: dodgerblue;
+      border: none;
+      border-radius: 10px;
       color: #fff;
-      font: 16px italic;
+      font: 16px italic;;
       padding: 5px 0;
-      width: 120px;
+      width: 100%;
     }
   }
 
 }
 
 section.cards-section {
-  display: inline-block;
-  margin: 0 auto;
-  width: 90%;
+
 
   .cards {
-    padding: 20px;
-    margin: 10px;
-    width: 40px;
+    width: 90%;
+    margin: 0 auto;
+
+    .card {
+      background-color: #F7F7F7;
+      box-sizing: border-box;
+      display: inline-flex;
+      flex-direction: column;
+      height: 150px;
+      margin: 10px;
+      padding: 8px;
+      position: relative;
+      width: 200px;
+
+      .card-el {
+        box-sizing: border-box;
+      }
+
+      .card-title {
+        font-weight: bold;
+        margin: 5px;
+      }
+
+      .card-desc {
+        font-size: 14px;
+        margin: 8px;
+      }
+
+      .card-deadline {
+        font-size: 10px;
+        position: absolute;
+        right: 10px;
+        bottom: 5px;
+      }
+    }
   }
 }
