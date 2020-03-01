@@ -2,6 +2,8 @@
 
 class CardsController < ApplicationController
 
+  protect_from_forgery
+
   def top; end
 
   def all
@@ -22,7 +24,8 @@ class CardsController < ApplicationController
 
   def destroy
     card = Card.find(params[:id])
-    card.delete!
+    card.destroy!
+    redirect_to top_cards_path
   end
 
   private
